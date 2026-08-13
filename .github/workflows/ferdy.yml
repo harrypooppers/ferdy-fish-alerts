@@ -2,7 +2,7 @@ name: Ferdy Fish Alerts
 
 on:
   schedule:
-    - cron: '*/5 * * * *'   # Toutes les 5 minutes
+    - cron: '* * * * *'   # Toutes les 1 minutes
   workflow_dispatch:        # Permet de lancer manuellement
 
 jobs:
