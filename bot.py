@@ -7,8 +7,8 @@ from datetime import datetime, timezone
 # === CONFIGURATION ===
 DISCORD_WEBHOOK = os.getenv("DISCORD_WEBHOOK")
 COLLECTION = "0xf0ad42e8d11dd0a3f06f76ddb39279c797568cb0"
-BID_THRESHOLD = 100      # Bid ≥ 100 AVAX
-SALE_THRESHOLD = 150     # Buy/Sell ≥ 150 AVAX
+BID_THRESHOLD = 70      # Bid ≥ 70 AVAX
+SALE_THRESHOLD = 100     # Buy/Sell ≥ 100 AVAX
 STATE_FILE = "last_state.json"
 
 def send_discord(title, description, color=0x57F287):
@@ -108,7 +108,7 @@ def check_activity():
         send_discord(title, desc, color=0x5865F2)  # bleu
 
     for sale in new_sales:
-        title = "🐟 Sale / Buy ≥ 150 AVAX"
+        title = "🐟 Sale / Buy ≥ 100 AVAX"
         desc = (
             f"**{sale['value']:.2f} AVAX**\n"
             f"Token **#{sale['token_id']}**\n"
